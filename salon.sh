@@ -59,7 +59,7 @@ SERVICE_MENU() {
   SERVICE_NAME=$($PSQL "SELECT s.name FROM customers INNER JOIN appointments USING(customer_id) INNER JOIN services AS s USING(service_id) WHERE customer_id=$CUSTOMER_ID AND time='$SERVICE_TIME'")
 
   # salon acknowledges customer's scheduled appointment
-  echo -e "\nI have put you down for a $(echo $SERVICE_NAME | sed 's/ //') at $SERVICE_TIME, $(echo $CUSTOMER_NAME | sed 's/ //')."
+  echo -e "\nI have put you down for a $(echo $SERVICE_NAME | sed 's/ //') service at $SERVICE_TIME, $(echo $CUSTOMER_NAME | sed 's/ //')."
 
 } 
 
